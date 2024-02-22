@@ -1,0 +1,46 @@
+#include<stdio.h>
+struct book{
+    char title[100];
+    char author[50];
+    int price;
+};
+void main(){
+    int a=1;
+    struct book b[3];
+   for(int i=0;i<3;i++){
+       printf("ENTER THE DETAILS FOR BOOK %d\n",a);
+       printf("BOOK NAME : ");
+       scanf("%s",&b[i].title);
+       printf("AUTHOR : ");
+       scanf("%s",&b[i].author);
+       printf("PRICE : ");
+       scanf("%d",&b[i].price);
+       a++;
+   } 
+   a=1;
+   for(int i=0;i<3;i++){
+        printf("DETAILS FOR BOOK %d\n",a);
+       printf("BOOK NAME : %s\n",b[i].title);
+       printf("AUTHOR : %s\n",b[i].author);
+       printf("PRICE : %d\n",b[i].price);
+       a++;
+   }
+    if(b[0].price>b[1].price&&b[0].price>b[2].price){
+        printf("EXPENSIVE BOOK : %s\n",b[0].title);
+    }
+    else if (b[1].price>b[2].price){
+         printf("EXPENSIVE BOOK : %s\n",b[1].title);
+    }
+    else{
+        printf("EXPENSIVE BOOK : %s\n",b[2].title);
+    }
+    if(b[0].price<b[1].price&&b[0].price<b[2].price){
+        printf("CHEAPEST BOOK : %s\n",b[0].title);
+    }
+    else if (b[1].price<b[2].price){
+         printf("CHEAPEST BOOK : %s\n",b[1].title);
+    }
+    else{
+        printf("CHEAPEST BOOK : %s\n",b[2].title);
+    }
+}
