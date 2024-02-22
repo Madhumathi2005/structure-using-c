@@ -1,0 +1,47 @@
+#include<stdio.h>
+struct employee{
+    char name[25];
+    char id[10];
+    int salary;
+};
+void main(){
+    int a=1;
+    struct employee e[3];
+   for(int i=0;i<3;i++){
+       printf("ENTER THE DETAILS FOR EMPLOYEE %d\n",a);
+       printf("NAME : ");
+       scanf("%s",&e[i].name);
+       printf("ID : ");
+       scanf("%s",&e[i].id);
+       printf("SALARY : ");
+       scanf("%d",&e[i].salary);
+        printf("----------------------------------------------------\n");
+       a++;
+   } 
+   a=1;
+   for(int i=0;i<3;i++){
+        printf("DETAILS OF EMPLOYEE %d\n",a);
+       printf("NAME : %s\n",e[i].name);
+       printf("ID : %s\n",e[i].id);
+       printf("SALARY : %d\n",e[i].salary);
+       printf("----------------------------------------------------\n");
+       a++;
+   }
+   printf("----------------------------------------------------\n");
+   printf("EMPLOYEE WITH HIGHEST SALARY :\n");
+    if(e[0].salary>e[1].salary&&e[0].salary>e[2].salary){
+        printf("NAME : %s\n",e[0].name);
+        printf("ID : %s\n",e[0].id);
+        printf("SALARY : %d\n",e[0].salary);
+    }
+    else if (e[1].salary>e[2].salary){
+        printf("NAME : %s\n",e[1].name);
+        printf("ID : %s\n",e[1].id);
+        printf("SALARY : %d\n",e[1].salary);
+    }
+    else{
+        printf("NAME : %s\n",e[2].name);
+        printf("ID : %s\n",e[2].id);
+        printf("SALARY : %d\n",e[2].salary);
+    }
+}
